@@ -12,7 +12,8 @@ var mongoose = require('mongoose'),
  */
 var CourseSchema = new Schema({
   number: {
-		type: String
+		type: String,
+		unique: true
 	},
   name: {
 		type: String
