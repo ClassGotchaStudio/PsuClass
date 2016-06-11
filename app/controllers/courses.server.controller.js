@@ -43,7 +43,7 @@ exports.update = function(req, res) {
               } else {
                 // TODO return success
               }
-           }
+           })
 				}
 			});
 		} else {
@@ -64,7 +64,7 @@ exports.delete = function(req, res) {
         } else {
           course.remove.exec();
         }
-      }
+      })
    }
 }
 
@@ -80,6 +80,6 @@ exports.search = function(req, res) {
         } else {
           return course;
         }
-      }
+      })
    }
 }
