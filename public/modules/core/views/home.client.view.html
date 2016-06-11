@@ -15,21 +15,49 @@
                     </div>
                     <div class="ibox-content">
                         <form role="form" class="form-horizontal ng-pristine ng-valid">
-                          <div class="form-group"><label class="col-sm-1 control-label">Major</label>
-                              <div class="col-sm-10"><select class="form-control m-b" name="account">
+                          <div class="form-group">
+                              <label class="col-sm-1 control-label">Campus</label>
+                              <div class="col-sm-2">
+                                <select class="form-control m-b" name="semester">
+                                  <option>University Park</option>
+                                </select>
+                              </div>
+                              <label class="col-sm-1 control-label">Semester</label>
+
+                              <div class="col-sm-2">
+
+                                <select class="form-control m-b" name="semester">
+                                  <option>Fall 2016</option>
+                                </select>
+                              </div>
+                              <label class="col-sm-1 control-label">Major</label>
+
+                              <div class="col-sm-2">
+
+                                <select class="form-control m-b" name="account">
                                   <option>Major</option>
                                   <option>option 2</option>
                                   <option>option 3</option>
                                   <option>option 4</option>
-                              </select>
+                                </select>
+                              </div>
+                              <label class="col-sm-1 control-label">Option</label>
+
+                              <div class="col-sm-2">
+
+                                <select class="form-control m-b" name="account">
+                                  <option>Major</option>
+                                  <option>GA</option>
+                                  <option>GN</option>
+                                  <option>GH</option>
+                                  <option>GS</option>
+                                  <option>GHA</option>
+                                </select>
                               </div>
                           </div>
                           <div class="hr-line-dashed"></div>
                           <div class="form-group">
-                              <div class="col-sm-4 col-sm-offset-2">
-                                  <button class="btn btn-white" type="submit">Clean Up</button>
-                                  <button class="btn btn-primary" type="submit">Search!</button>
-                              </div>
+                              <button ng-click="search()" class="btn btn-primary col-sm-10 col-sm-offset-1" type="submit">Search!</button>
                           </div>
                         </form>
                     </div>
@@ -39,23 +67,6 @@
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <h5>Result</h5>
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#">Config option 1</a>
-                                </li>
-                                <li><a href="#">Config option 2</a>
-                                </li>
-                            </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
                     </div>
                     <div class="ibox-content">
 
@@ -63,29 +74,29 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
+                                <th>Course Number</th>
+                                <th>Course Name</th>
+                                <th>Instuctor(s)</th>
+                                <th>Credit</th>
+                                <th>Day/Time</th>
+                                <th>Classroom</th>
+                                <th>Capacity</th>
+                                <th>Waitlist</th>
+                                <th>Status</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
+                            <tr ng-repeat="course in courses track by $index">
+                                <td>{{$index}}</td>
+                                <td>{{course.number}}</td>
+                                <td>{{course.name}}</td>
+                                <td>{{course.instructor1}} {{course.instructor2}}</td>
+                                <td>{{course.unit}}</td>
+                                <td>{{course.time}}</td>
+                                <td>{{course.room}}</td>
+                                <td>{{course.enrolled}}/{{course.capacity}}</td>
+                                <td>{{course.waitlistEnrolled}}/{{course.waitlist}}</td>
+                                <td>{{course.status}}</td>
                             </tr>
                             </tbody>
                         </table>
