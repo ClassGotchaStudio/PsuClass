@@ -3,7 +3,7 @@
 module.exports = {
 	db: 'mongodb://localhost/psuclass-dev',
 	app: {
-		title: 'StartApp - Development Environment'
+		title: 'PSUCLASS - Development Environment'
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',

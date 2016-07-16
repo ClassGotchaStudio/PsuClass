@@ -73,7 +73,7 @@ exports.delete = function(req, res) {
 }
 
 exports.search = function(req, res) {
-    if (req.body) {
+    if (req.body != [] || req.body) {
         Course.
         find(req.body).
         sort({

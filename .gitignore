@@ -1,3 +1,6 @@
 # Lib files
 public/lib/*
 node_modules/*
+
+# Mac file system files
+.DS_Store

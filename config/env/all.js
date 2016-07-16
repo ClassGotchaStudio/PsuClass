@@ -2,9 +2,9 @@
 
 module.exports = {
     app: {
-        title: 'StartApp',
-        description: 'Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js',
-        keywords: 'MongoDB, Express, AngularJS, Node.js'
+        title: 'PSUCLASS',
+        description: 'An replacement for lionpath by c0dezlee',
+        keywords: ''
     },
     port: process.env.PORT || 3000,
     templateEngine: 'swig',
