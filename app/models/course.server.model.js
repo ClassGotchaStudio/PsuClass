@@ -12,8 +12,10 @@ var mongoose = require('mongoose'),
  */
 var CourseSchema = new Schema({
   number: {
-		type: String,
-		unique: true
+		type: String
+	},
+	major: {
+		type: String
 	},
   name: {
 		type: String
@@ -45,6 +47,9 @@ var CourseSchema = new Schema({
   capacity: {
     type: Number
   },
+	description: {
+		type: String
+	},
   enrolled: {
     type: Number
   },

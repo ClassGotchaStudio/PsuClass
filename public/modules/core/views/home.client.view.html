@@ -1,13 +1,14 @@
+
 <section data-ng-controller="HomeController">
 
-    <div class="wrapper wrapper-content" >
-      <div class="col-lg-12">
-          <div class="text-center m-t-lg">
-              <h1>Use lionpath to search course is a pain.</h1>
-              <small>Use PSUCLASS now.</small>
-          </div>
-      </div>
-      <div class="row">
+    <div class="wrapper wrapper-content">
+        <div class="col-lg-12">
+            <div class="text-center m-t-lg">
+                <h1>Use lionpath to search course is a pain.</h1>
+                <small>Use PSUCLASS now.</small>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
@@ -15,50 +16,296 @@
                     </div>
                     <div class="ibox-content">
                         <form role="form" class="form-horizontal ng-pristine ng-valid">
-                          <div class="form-group">
-                              <label class="col-sm-1 control-label">Campus</label>
-                              <div class="col-sm-2">
-                                <select class="form-control m-b" name="semester">
-                                  <option>University Park</option>
-                                </select>
-                              </div>
-                              <label class="col-sm-1 control-label">Semester</label>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label">Campus</label>
+                                <div class="col-sm-2">
+                                    <select class="form-control m-b" name="campus" id="campus">
+                                        <option>University Park</option>
+                                    </select>
+                                </div>
 
-                              <div class="col-sm-2">
+                                <label class="col-sm-1 control-label">Semester</label>
+                                <div class="col-sm-2">
+                                    <select class="form-control m-b" name="semester" id="semester">
+                                        <option value="F2016">Fall 2016</option>
+                                    </select>
+                                </div>
 
-                                <select class="form-control m-b" name="semester">
-                                  <option>Fall 2016</option>
-                                </select>
-                              </div>
-                              <label class="col-sm-1 control-label">Major</label>
+                                <label class="col-sm-1 control-label">Major</label>
+                                <div class="col-sm-2">
+                                    <select class="form-control m-b" name="major" id="major" ng-model="send_data.major">
+                                        <option value="" selected="selected">Major</option>
+                                        <option value="AA">AA - Arts and Architecture</option>
+                                        <option value="AAAS">AAAS - African/Afr Amer Studies</option>
+                                        <option value="ABE">ABE - Ag and Biological Engineering</option>
+                                        <option value="ABLAW">ABLAW - Study Abroad</option>
+                                        <option value="ACCTG">ACCTG - Accounting</option>
+                                        <option value="ACS">ACS - Acoustics</option>
+                                        <option value="ADTED">ADTED - Adult Education</option>
+                                        <option value="AE">AE - Architectural Engineering</option>
+                                        <option value="AED">AED - Art Education</option>
+                                        <option value="AEE">AEE - Ag and Extension Education</option>
+                                        <option value="AEREC">AEREC - Ag Ec and Rural Sociology</option>
+                                        <option value="AERSP">AERSP - Aerospace Engineering</option>
+                                        <option value="AFAM">AFAM - African American Studies</option>
+                                        <option value="AFR">AFR - African Studies</option>
+                                        <option value="AG">AG - Agriculture</option>
+                                        <option value="AGBM">AGBM - Agribusiness Management</option>
+                                        <option value="AGECO">AGECO - Agroecology</option>
+                                        <option value="AGRO">AGRO - Agronomy</option>
+                                        <option value="AGSC">AGSC - Agricultural Science</option>
+                                        <option value="AIR">AIR - Air Force</option>
+                                        <option value="ANSC">ANSC - Animal Science</option>
+                                        <option value="ANTH">ANTH - Anthropology</option>
+                                        <option value="APLNG">APLNG - Applied Linguistics</option>
+                                        <option value="ARAB">ARAB - Arabic</option>
+                                        <option value="ARCH">ARCH - Architecture</option>
+                                        <option value="ARMY">ARMY - Army</option>
+                                        <option value="ART">ART - Art</option>
+                                        <option value="ARTH">ARTH - Art History</option>
+                                        <option value="ASIA">ASIA - Asian Studies</option>
+                                        <option value="ASM">ASM - Ag Systems Management</option>
+                                        <option value="ASTRO">ASTRO - Astronomy and Astrophysics</option>
+                                        <option value="AYFCE">AYFCE - App Yth Fam and Cm Edu</option>
+                                        <option value="BA">BA - Business Administration</option>
+                                        <option value="BBH">BBH - Biobehavioral Health</option>
+                                        <option value="BE">BE - Biological Engineering</option>
+                                        <option value="BIOE">BIOE - Bioengineering</option>
+                                        <option value="BIOET">BIOET - Bioethics</option>
+                                        <option value="BIOL">BIOL - Biology</option>
+                                        <option value="BIOTC">BIOTC - Biotechnology</option>
+                                        <option value="BISC">BISC - Biological Science</option>
+                                        <option value="BLAW">BLAW - Business Law</option>
+                                        <option value="BMB">BMB - Biochemistry and Molec Biology</option>
+                                        <option value="BME">BME - Biomedical Engineering</option>
+                                        <option value="BMH">BMH - Bioethics and Med Humanities</option>
+                                        <option value="BMMB">BMMB - Biochm Micrb and Molec Biology</option>
+                                        <option value="BOT">BOT - Botany</option>
+                                        <option value="BRASS">BRASS - Music-Brass</option>
+                                        <option value="BRS">BRS - Biorenewable Systems</option>
+                                        <option value="BUS">BUS - Business</option>
+                                        <option value="C-S">C-S - Curriculum and Supervision</option>
+                                        <option value="CAMS">CAMS - Class and Anc Med Studies</option>
+                                        <option value="CAS">CAS - Comm Arts and Sciences</option>
+                                        <option value="CCLAW">CCLAW - Corporate and Commercial Law</option>
+                                        <option value="CE">CE - Civil Engineering</option>
+                                        <option value="CED">CED - Comm Env and Development</option>
+                                        <option value="CEDEV">CEDEV - Community and Econ Dev</option>
+                                        <option value="CHE">CHE - Chemical Engineering</option>
+                                        <option value="CHEM">CHEM - Chemistry</option>
+                                        <option value="CHNS">CHNS - Chinese</option>
+                                        <option value="CI">CI - Curriculum and Instruction</option>
+                                        <option value="CIED">CIED - Comp and Internatnl Ed</option>
+                                        <option value="CLCR">CLCR - Constl Law/Civil Rights</option>
+                                        <option value="CMAS">CMAS - Child Maltr &amp; Advoc</option>
+                                        <option value="CMLIT">CMLIT - Comparative Literature</option>
+                                        <option value="CMPEN">CMPEN - Computer Engineering</option>
+                                        <option value="CMPSC">CMPSC - Computer Science</option>
+                                        <option value="CNED">CNED - Counselor Education</option>
+                                        <option value="CNPSY">CNPSY - Counseling Psychology</option>
+                                        <option value="COCUR">COCUR - Co-Curricular Activities</option>
+                                        <option value="COMM">COMM - Communications</option>
+                                        <option value="CORE">CORE - Core Courses</option>
+                                        <option value="CRIM">CRIM - Criminology</option>
+                                        <option value="CRIML">CRIML - Criminal Law</option>
+                                        <option value="CSA">CSA - College Student Affairs</option>
+                                        <option value="CSD">CSD - Comm Sci and Disorders</option>
+                                        <option value="CSE">CSE - Computer Science and Engr</option>
+                                        <option value="DANCE">DANCE - Dance</option>
+                                        <option value="DEMOG">DEMOG - Demography</option>
+                                        <option value="DS">DS - Data Sciences</option>
+                                        <option value="EARTH">EARTH - Earth Sciences</option>
+                                        <option value="EBF">EBF - Energy Business and Finance</option>
+                                        <option value="EBIZ">EBIZ - E-Business</option>
+                                        <option value="ECE">ECE - Early Childhood Education</option>
+                                        <option value="ECLGY">ECLGY - Ecology</option>
+                                        <option value="ECON">ECON - Economics</option>
+                                        <option value="EDLDR">EDLDR - Educational Leadership Program</option>
+                                        <option value="EDPSY">EDPSY - Educational Psychology</option>
+                                        <option value="EDSGN">EDSGN - Engineering Design</option>
+                                        <option value="EDTHP">EDTHP - Educ Theory and Policy</option>
+                                        <option value="EDUC">EDUC - Education</option>
+                                        <option value="EE">EE - Electrical Engineering</option>
+                                        <option value="EGEE">EGEE - Energy/Geo-Envir Eng</option>
+                                        <option value="EMCH">EMCH - Engineering Mechanics</option>
+                                        <option value="EME">EME - Energy and Mineral Engineering</option>
+                                        <option value="EMSC">EMSC - Earth and Mineral Sciences</option>
+                                        <option value="ENGL">ENGL - English</option>
+                                        <option value="ENGR">ENGR - Engineering</option>
+                                        <option value="ENNEC">ENNEC - Engy, Envrn, and Mn Econ</option>
+                                        <option value="ENT">ENT - Entomology</option>
+                                        <option value="ENTR">ENTR - Entrepreneurship</option>
+                                        <option value="ENVSE">ENVSE - Environ System Engineering</option>
+                                        <option value="ERM">ERM - Environmental Resource Mgmt</option>
+                                        <option value="ESC">ESC - Engineering Science</option>
+                                        <option value="ESL">ESL - English as a Second Language</option>
+                                        <option value="FDSC">FDSC - Food Science</option>
+                                        <option value="FIN">FIN - Finance</option>
+                                        <option value="FMEST">FMEST - Family Law / Estate Planning</option>
+                                        <option value="FOR">FOR - Forestry</option>
+                                        <option value="FPEXT">FPEXT - FP-Misc Summer Extrn</option>
+                                        <option value="FPHBG">FPHBG - Fld Plcmt Harrisburg</option>
+                                        <option value="FPWDC">FPWDC - FP- W DC Seminar Pro</option>
+                                        <option value="FR">FR - French</option>
+                                        <option value="FRNSC">FRNSC - Forensic Science</option>
+                                        <option value="FSC">FSC - Fuel Science</option>
+                                        <option value="GD">GD - Graphic Design</option>
+                                        <option value="GENET">GENET - Genetics</option>
+                                        <option value="GEOG">GEOG - Geography</option>
+                                        <option value="GEOSC">GEOSC - Geosciences</option>
+                                        <option value="GER">GER - German</option>
+                                        <option value="GLIS">GLIS - Global and Intl Stud</option>
+                                        <option value="GREEK">GREEK - Greek</option>
+                                        <option value="HDFS">HDFS - Hum Dev/Family Studies</option>
+                                        <option value="HDNRE">HDNRE - Hum Dim Nat Res Env</option>
+                                        <option value="HEBR">HEBR - Hebrew</option>
+                                        <option value="HHD">HHD - Hlth and Human Dev</option>
+                                        <option value="HIED">HIED - Higher Education</option>
+                                        <option value="HINDI">HINDI - Hindi</option>
+                                        <option value="HIST">HIST - History</option>
+                                        <option value="HM">HM - Hospitality Management</option>
+                                        <option value="HONOR">HONOR - Honors</option>
+                                        <option value="HORT">HORT - Horticulture</option>
+                                        <option value="HPA">HPA - Health Policy and Admn</option>
+                                        <option value="HRER">HRER - Hum Res and Empmnt Rel</option>
+                                        <option value="IB">IB - International Business</option>
+                                        <option value="IE">IE - Industrial Engineering</option>
+                                        <option value="IHAPP">IHAPP - IHC - Appellate</option>
+                                        <option value="IHASE">IHASE - IHC-Art,Sprt,Ent Law</option>
+                                        <option value="IHCAD">IHCAD - IHC-Children's Advocacy</option>
+                                        <option value="IHCLN">IHCLN - In-House Clinic</option>
+                                        <option value="IHEAC">IHEAC - Entrepreneur Asst Clinic</option>
+                                        <option value="IHFAM">IHFAM - IHC-Family Law</option>
+                                        <option value="IHICJ">IHICJ - Indig Crim Justice Clinic</option>
+                                        <option value="IHIMM">IHIMM - IHC - Immigration</option>
+                                        <option value="IHRED">IHRED - In Hse Rur Econ Dev</option>
+                                        <option value="IHVET">IHVET - In-House Clinic for Veterans</option>
+                                        <option value="INART">INART - Integrative Arts</option>
+                                        <option value="INS">INS - Insurance</option>
+                                        <option value="INTAF">INTAF - International Affairs</option>
+                                        <option value="INTAG">INTAG - International Agriculture</option>
+                                        <option value="INTER">INTER - Internatl and Comp Law</option>
+                                        <option value="INTPR">INTPR - Intl Prop/Media Law</option>
+                                        <option value="IST">IST - Info Sciences and Technology</option>
+                                        <option value="IT">IT - Italian</option>
+                                        <option value="JAPNS">JAPNS - Japanese</option>
+                                        <option value="JST">JST - Jewish Studies</option>
+                                        <option value="KEYBD">KEYBD - Music-Keyboard</option>
+                                        <option value="KINES">KINES - Kinesiology</option>
+                                        <option value="KOR">KOR - Korean</option>
+                                        <option value="LA">LA - Liberal Arts</option>
+                                        <option value="LABOR">LABOR - Labor and Employment Law</option>
+                                        <option value="LANG">LANG - Languages</option>
+                                        <option value="LARCH">LARCH - Landscape Architecture</option>
+                                        <option value="LATIN">LATIN - Latin</option>
+                                        <option value="LDT">LDT - Learning Design and Technology</option>
+                                        <option value="LER">LER - Labor and Employment Relations</option>
+                                        <option value="LGWR">LGWR - Labor &amp; Global Workers' Rights</option>
+                                        <option value="LING">LING - Linguistics</option>
+                                        <option value="LLED">LLED - Language / Literacy Education</option>
+                                        <option value="LLMLW">LLMLW - Master of Law Courses</option>
+                                        <option value="LST">LST - Library Studies</option>
+                                        <option value="LTNST">LTNST - Latina/o Studies</option>
+                                        <option value="MATH">MATH - Mathematics</option>
+                                        <option value="MATL">MATL - Materials</option>
+                                        <option value="MATSE">MATSE - Materials Science and Engr</option>
+                                        <option value="MCIBS">MCIBS - Molec Cellu &amp; Intg Biosciences</option>
+                                        <option value="ME">ME - Mechanical Engineering</option>
+                                        <option value="MEDVL">MEDVL - Medieval Studies</option>
+                                        <option value="METEO">METEO - Meteorology</option>
+                                        <option value="MGMT">MGMT - Management</option>
+                                        <option value="MICRB">MICRB - Microbiology</option>
+                                        <option value="MIS">MIS - Management Information Systems</option>
+                                        <option value="MKTG">MKTG - Marketing</option>
+                                        <option value="MNG">MNG - Mining</option>
+                                        <option value="MNPR">MNPR - Mineral Processing</option>
+                                        <option value="MTHED">MTHED - Mathematics Education</option>
+                                        <option value="MUED">MUED - Music Education</option>
+                                        <option value="MUSIC">MUSIC - Music</option>
+                                        <option value="NAVSC">NAVSC - Naval Science</option>
+                                        <option value="NEURO">NEURO - Neuroscience</option>
+                                        <option value="NUCE">NUCE - Nuclear Engineering</option>
+                                        <option value="NURS">NURS - Nursing</option>
+                                        <option value="NUTR">NUTR - Nutrition</option>
+                                        <option value="OR">OR - Operations Research</option>
+                                        <option value="PERCN">PERCN - Music-Percussion</option>
+                                        <option value="PERSP">PERSP - Perspectives</option>
+                                        <option value="PHIL">PHIL - Philosophy</option>
+                                        <option value="PHOTO">PHOTO - Photography</option>
+                                        <option value="PHSIO">PHSIO - Physiology</option>
+                                        <option value="PHYS">PHYS - Physics</option>
+                                        <option value="PLANT">PLANT - Plant</option>
+                                        <option value="PLBIO">PLBIO - Plant Biology</option>
+                                        <option value="PLSC">PLSC - Political Science</option>
+                                        <option value="PNG">PNG - Petroleum and Nat Gas Engr</option>
+                                        <option value="POL">POL - Polish</option>
+                                        <option value="PORT">PORT - Portuguese</option>
+                                        <option value="PPATH">PPATH - Plant Pathology</option>
+                                        <option value="PPEM">PPEM - Plant Path and Enviro Micro</option>
+                                        <option value="PSU">PSU - PSU First-Year Seminar</option>
+                                        <option value="PSY">PSY - Psychology</option>
+                                        <option value="PSYCH">PSYCH - Psychology</option>
+                                        <option value="QMM">QMM - Quality and Manufacturing Mgmt</option>
+                                        <option value="REST">REST - Real Estate</option>
+                                        <option value="RHS">RHS - Rehab and Human Services</option>
+                                        <option value="RLST">RLST - Religious Studies</option>
+                                        <option value="RM">RM - Risk Management</option>
+                                        <option value="RPEL">RPEL - Real Prop and Envrml Law</option>
+                                        <option value="RPTM">RPTM - Rec, Park, and Tourism Mgmt</option>
+                                        <option value="RSOC">RSOC - Rural Sociology</option>
+                                        <option value="RUS">RUS - Russian</option>
+                                        <option value="SC">SC - Science</option>
+                                        <option value="SCIED">SCIED - Science Education</option>
+                                        <option value="SCIS">SCIS - Supply Chain and Info Systems</option>
+                                        <option value="SCM">SCM - Supply Chain Management</option>
+                                        <option value="SEM">SEM - Seminar - Dickinson</option>
+                                        <option value="SJDLW">SJDLW - Law Research Doctorate</option>
+                                        <option value="SKILS">SKILS - Lit, Dispt Res, and Skills</option>
+                                        <option value="SLAV">SLAV - Slavic</option>
+                                        <option value="SOC">SOC - Sociology</option>
+                                        <option value="SODA">SODA - Social Data Analytic</option>
+                                        <option value="SOILS">SOILS - Soil Science</option>
+                                        <option value="SPAN">SPAN - Spanish</option>
+                                        <option value="SPEC">SPEC - Special Graduate Program</option>
+                                        <option value="SPLED">SPLED - Special Education</option>
+                                        <option value="SPSY">SPSY - School Psychology</option>
+                                        <option value="SRA">SRA - Security and Risk Analysis</option>
+                                        <option value="SSED">SSED - Social Studies Education</option>
+                                        <option value="STAT">STAT - Statistics</option>
+                                        <option value="STRNG">STRNG - Music-Strings</option>
+                                        <option value="SUST">SUST - Sustainability</option>
+                                        <option value="SWA">SWA - Swahili</option>
+                                        <option value="TAX">TAX - Taxation</option>
+                                        <option value="THEA">THEA - Theatre</option>
+                                        <option value="TURF">TURF - Turfgrass</option>
+                                        <option value="UKR">UKR - Ukrainian</option>
+                                        <option value="VBSC">VBSC - Vet and Biomedical Sciences</option>
+                                        <option value="VOICE">VOICE - Music-Voice</option>
+                                        <option value="WFED">WFED - Workforce Education</option>
+                                        <option value="WFS">WFS - Wildlife and Fisheries Science</option>
+                                        <option value="WLED">WLED - World Languages Education</option>
+                                        <option value="WMNST">WMNST - Women's Studies</option>
+                                        <option value="WP">WP - Wood Products</option>
+                                        <option value="WWNDS">WWNDS - Music-Woodwinds</option>
+                                    </select>
+                                </div>
 
-                              <div class="col-sm-2">
-
-                                <select class="form-control m-b" name="account">
-                                  <option>Major</option>
-                                  <option>option 2</option>
-                                  <option>option 3</option>
-                                  <option>option 4</option>
-                                </select>
-                              </div>
-                              <label class="col-sm-1 control-label">Option</label>
-
-                              <div class="col-sm-2">
-
-                                <select class="form-control m-b" name="account">
-                                  <option>Major</option>
-                                  <option>GA</option>
-                                  <option>GN</option>
-                                  <option>GH</option>
-                                  <option>GS</option>
-                                  <option>GHA</option>
-                                </select>
-                              </div>
-                          </div>
-                          <div class="hr-line-dashed"></div>
-                          <div class="form-group">
-                              <button ng-click="search()" class="btn btn-primary col-sm-10 col-sm-offset-1" type="submit">Search!</button>
-                          </div>
+                                <label class="col-sm-1 control-label">Option</label>
+                                <div class="col-sm-2">
+                                    <select class="form-control m-b" name="kind" id="option" ng-model="send_data.option">
+                                        <option value="" selected="selected">None</option>
+                                        <option value="GA">GA</option>
+                                        <option value="GN">GN</option>
+                                        <option value="GH">GH</option>
+                                        <option value="GS">GS</option>
+                                        <option value="GHA">GHA</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <button ng-click="getData()" class="btn btn-primary col-sm-10 col-sm-offset-1" type="submit">Search!</button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -69,40 +316,69 @@
                         <h5>Result</h5>
                     </div>
                     <div class="ibox-content">
-
-                        <table class="table table-bordered">
+                        <div ng-show="items===[] || !items">
+                            <p class="text-center ">
+                                {{ message }}
+                            </p>
+                        </div>
+                        <div class="table-responsive" ng-show="items" >
+                            <table class="table table-striped table-bordered table-hover dataTables-example"
+                                   datatable="" dt-options="dtOptions" dt-columns="dtColumns">
+                            </table>
+                        </div>
+                        <!-- <table class="table table-striped table-condensed table-hover">
                             <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Course Number</th>
-                                <th>Course Name</th>
-                                <th>Instuctor(s)</th>
-                                <th>Credit</th>
-                                <th>Day/Time</th>
-                                <th>Classroom</th>
-                                <th>Capacity</th>
-                                <th>Waitlist</th>
-                                <th>Status</th>
+                                <th custom-sort sort="sort" order="id">#</th>
+                                <th custom-sort sort="sort" order="number">Course Number</th>
+                                <th custom-sort sort="sort" order="name">Course Name</th>
+                                <th custom-sort sort="sort" order="instructor">Instuctor(s)</th>
+                                <th custom-sort sort="sort" order="credit">Credit</th>
+                                <th custom-sort sort="sort" order="time">Day/Time</th>
+                                <th custom-sort sort="sort" order="classroom">Classroom</th>
+                                <th custom-sort sort="sort" order="capacity">Capacity</th>
+                                <th custom-sort sort="sort" order="waitlist">Waitlist</th>
+                                <th custom-sort sort="sort" order="status">Status</th>
                             </tr>
                             </thead>
+                            <tfoot>
+                                <td colspan="6">
+                                    <div class="center">
+                                        <ul class="pagination">
+                                            <li class="paginate_button" ng-class="{disabled: currentPage == 0}" >
+                                                <a href ng-click="prevPage()">« Prev</a>
+                                            </li>
+
+                                            <li class="paginate_button" ng-repeat="n in range(pagedItems.length, currentPage, currentPage + gap) " ng-class="{active: n == currentPage}" ng-click="setPage()">
+                                                <a href ng-bind="n + 1">1</a>
+                                            </li>
+
+                                            <li class="paginate_button" ng-class="{disabled: (currentPage) == pagedItems.length - 1}">
+                                                <a href ng-click="nextPage()">Next »</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tfoot>
                             <tbody>
-                            <tr ng-repeat="course in courses track by $index">
-                                <td>{{$index}}</td>
-                                <td>{{course.number}}</td>
-                                <td>{{course.name}}</td>
-                                <td>{{course.instructor1}} {{course.instructor2}}</td>
-                                <td>{{course.unit}}</td>
-                                <td>{{course.time}}</td>
-                                <td>{{course.room}}</td>
-                                <td>{{course.enrolled}}/{{course.capacity}}</td>
-                                <td>{{course.waitlistEnrolled}}/{{course.waitlist}}</td>
-                                <td>{{course.status}}</td>
-                            </tr>
+                                <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sort.sortingOrder:sort.reverse">
+                                      <!-- <td>{{$index}}</td> -->
+                                      <td>{{item.number}}</td>
+                                      <td>{{item.name}}</td>
+                                      <td>{{item.instructor1}} {{item.instructor2}}</td>
+                                      <td>{{item.unit}}</td>
+                                      <td>{{item.time}}</td>
+                                      <td>{{item.room}}</td>
+                                      <td>{{item.enrolled}}/{{item.capacity}}</td>
+                                      <td>{{item.waitlistEnrolled}}/{{item.waitlist}}</td>
+                                      <td>{{item.status}}</td>
+                                  </tr>
+                                </tr>
                             </tbody>
-                        </table>
+                        </table> -->
 
                     </div>
                 </div>
             </div>
-      </div>
+        </div>
 </section>
