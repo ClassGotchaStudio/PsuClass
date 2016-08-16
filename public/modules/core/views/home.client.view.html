@@ -341,6 +341,7 @@
                                 <th custom-sort sort="sort" order="capacity">Capacity</th>
                                 <th custom-sort sort="sort" order="waitlist">Waitlist</th>
                                 <th custom-sort sort="sort" order="status">Status</th>
+                                <th custom-sort sort="sort">Details</th>
                             </tr>
                             </thead>
                             <tfoot>
@@ -364,7 +365,7 @@
                             </tfoot>
                             <tbody>
                                 <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sort.sortingOrder:sort.reverse">
-                                      <td>{{$index}}</td>
+                                      <td>{{$index+1}}</td>
                                       <td>{{item.number}}</td>
                                       <td>{{item.name}}</td>
                                       <td>{{item.instructor1}} {{item.instructor2}}</td>
@@ -374,6 +375,9 @@
                                       <td>{{item.enrolled}}/{{item.capacity}}</td>
                                       <td>{{item.waitlistEnrolled}}/{{item.waitlist}}</td>
                                       <td>{{item.status}}</td>
+                                      <td>
+                                        <a data-toggle="modal" data-target="#myModal" ng-click="whichModal(item)">details</a>
+                                      </td>
                                   </tr>
                                 </tr>
                             </tbody>
@@ -383,4 +387,37 @@
                 </div>
             </div>
         </div>
+        <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog">
+          <div class="modal-content animated bounceInRight">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                      <h4 class="modal-title">Class Details</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>
+                      Full Name:
+                    </p>
+                    <p>
+                      {{selectedItem.name + ' - ' + selectedItem.fullName}}
+                    </p>
+                    <p>
+                      Notes:
+                    </p>
+                    <p>
+                      {{selectedItem.notes}}
+                    </p>
+                    <p>
+                      Descriptions:
+                    </p>
+                    <p>
+                      {{selectedItem.classType}}
+                    </p>
+                    <p>
+                      {{selectedItem.description}}
+                    </p>
+                  </div>
+              </div>
+          </div>
+      </div>
 </section>

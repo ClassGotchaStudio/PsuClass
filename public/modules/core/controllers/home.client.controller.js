@@ -5,6 +5,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         // This provides Authentication context.
         $scope.authentication = Authentication;
         $scope.message = "No result.";
+        $scope.selectedItem = [];
         $scope.gap = 5;
         $scope.filteredItems = [];
         $scope.groupedItems = [];
@@ -15,6 +16,10 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
             sortingOrder: 'id',
             reverse: false
         };
+
+        $scope.whichModal = function(item) {
+          $scope.selectedItem = item;
+        }
 
         var searchMatch = function(haystack, needle) {
             if (!needle) {
