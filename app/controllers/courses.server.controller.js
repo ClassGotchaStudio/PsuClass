@@ -74,6 +74,7 @@ exports.delete = function(req, res) {
 
 exports.search = function(req, res) {
     if (req.body != [] || req.body) {
+      console.log(req.body);
         Course.
         find(req.body).
         sort({
@@ -81,14 +82,18 @@ exports.search = function(req, res) {
         }).
         exec(function(err, course) {
             if (!course) {
+              console.log('No course found');
                 return res.status(400).send({
                     message: 'No course with that number has been found'
                 });
             } else {
+              console.log('success');
+              console.log(course);
                 return res.status(200).json(course);
             }
         });
     } else {
+      console.log('No data sent');
       return res.status(400).send({
         message: 'No data sent'
       })

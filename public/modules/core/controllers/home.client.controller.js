@@ -95,9 +95,10 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
             } else {
                 $http.post('/search/', $scope.send_data)
                     .success(function(data, status) {
-                        $scope.items = data;
-                        if ($scope.items != []) {
-                            // functions have been describe process the data for display
+                        if (data.length() !== 0) {
+                            $scope.items = data;
+                            console.log($scope.items);
+                            // process the data for display
                             $scope.search();
                         } else {
                           $scope.message = "No result.";
@@ -108,67 +109,5 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                     });
             }
           }
-        // // get course data
-        // var getData = function($timeout, $q) {
-        //     return function() {
-        //         // simulated async function
-        //         return $q(function(resolve) {
-        //             $timeout(function() {
-        //                 // $http.post('/search').success(function(response) {
-        //                 //     // If successful show success message and clear form
-        //                 //     $scope.success = true;
-        //                 //     resolve(response);
-        //                 // }).error(function(response) {
-        //                 //     $scope.error = response.message;
-        //                 // });
-        //                 $http.post('/search/', $scope.send_data)
-        //                     .success(function(response, status) {
-        //                         console.log(response);
-        //                         //  $scope.items = data;
-        //                         if ($scope.items != []) {
-        //                             console.log(response);
-        //                             resolve(response);
-        //                         } else {
-        //                             $scope.message = "No result.";
-        //                         }
-        //                     })
-        //                     .error(function(response, status) {
-        //                         $scope.message = status + ": Failed to get data from server, please contact author.";
-        //                     });
-        //             }, 100);
-        //         });
-        //     };
-        // };
-        //
-        //  //datatable settings
-        // var vm = this;
-        // vm.options = {
-        //     'aoColumns': [{
-        //         'mData': 'number',
-        //         'sTitle': 'Course Number'
-        //     }, {
-        //       'mData': 'name',
-        //       'sTitle': 'Course Name'
-        //     }, {
-        //       'mData': 'section',
-        //       'sTitle': 'Course Section'
-        //     }, {
-        //       'mData': 'major',
-        //       'sTitle': 'Course Major'
-        //     }, {
-        //       'mData': '',
-        //       'sTitle': 'Course Name'
-        //     }]
-        // };
-        //
-        // $scope.dtOptions = DTOptionsBuilder.fromFnPromise(getData($timeout, $q))
-        //     .withPaginationType('full_numbers');
-        // //
-        // // $scope.dtColumns = [
-        // //     DTColumnBuilder.newColumn('number').withTitle('Course Number'),
-        // //     DTColumnBuilder.newColumn('name').withTitle('Course Name'),
-        // //     DTColumnBuilder.newColumn('section').withTitle('Course Section'),
-        // //     DTColumnBuilder.newColumn('major').withTitle('Email'),
-        // // ];
     }
 ]);
