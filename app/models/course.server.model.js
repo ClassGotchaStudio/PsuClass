@@ -58,6 +58,9 @@ var CourseSchema = new Schema({
   },
   waitlistEnrolled: {
     type: Number
-  }
+  },
+	classType: {
+		type: String
+	}
 });
 mongoose.model('Course', CourseSchema);
