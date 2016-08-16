@@ -86,7 +86,6 @@ exports.search = function(req, res) {
                     message: 'No course with that number has been found'
                 });
             } else {
-              console.log(course);
                 return res.status(200).json(course);
             }
         });
