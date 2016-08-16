@@ -95,7 +95,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
             } else {
                 $http.post('/search/', $scope.send_data)
                     .success(function(data, status) {
-                        if (data.length() !== 0) {
+                        if (data.length !== 0) {
                             $scope.items = data;
                             console.log($scope.items);
                             // process the data for display

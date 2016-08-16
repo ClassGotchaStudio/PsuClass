@@ -81,7 +81,7 @@ exports.search = function(req, res) {
             occupation: -1
         }).
         exec(function(err, course) {
-            if (!course) {
+            if (course.length === 0) {
               console.log('No course found');
                 return res.status(400).send({
                     message: 'No course with that number has been found'
