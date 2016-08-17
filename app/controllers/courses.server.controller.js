@@ -74,20 +74,13 @@ exports.delete = function(req, res) {
 
 exports.search = function(req, res) {
     if (req.body != [] || req.body) {
-      console.log(req.body);
         Course.
         find(req.body).
         sort({
             occupation: -1
         }).
         exec(function(err, course) {
-            if (course.length === 0) {
-                return res.status(400).send({
-                    message: 'No course with that number has been found'
-                });
-            } else {
-                return res.status(200).json(course);
-            }
+            return res.status(200).json(course);
         });
     } else {
       return res.status(400).send({
